@@ -441,6 +441,11 @@
               <FilePath>.\Steering_Actuator.c</FilePath>
             </File>
             <File>
+              <FileName>Throttle.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Throttle.c</FilePath>
+            </File>
+            <File>
               <FileName>Linear_Actuator.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Linear_Actuator.c</FilePath>

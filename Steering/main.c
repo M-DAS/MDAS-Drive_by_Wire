@@ -1,8 +1,13 @@
 //This is the steering folder
+//At this point, the code has been untested. Written 6/11/2018.
+//PRIOR TO TESTING PUT CAR ON JACKSTAND
 #define PART_TM4C123GH6PM 1;
+#define actuator_torque_threshold 0.00000095367431640625;//In Nm/bit
+#define TORQUE_THRESHOLD	55;//Approximate value, may need to be changed
 
 #include <stdint.h>
 #include <stdbool.h>
+#include <math.h>
 
 #include "Globals_and_Defines.h"
 #include "initialization.h"
@@ -27,10 +32,17 @@ int main()
 	
 	uint32_t buttonPressed;
 	initialization();
+	tCANMsgObject sMsgObjectRx;
+	uint32_t initial_canMsg;
+	uint32_t new_canMsg;
+	uint32_t subbed_canMsg;
+	uint32_t torqueIn=0;
 	
 
 	while(1)
 	{
+		CANMessageGet(CAN0_BASE, 1, &sMsgObjectRx, MSG_OBJ_TYPE_RX);
+		initial_canMsg = sMsgObjectRx.pui8MsgData && 0x0000FF0000000000; //Take the CAN Data at an earlier point in time.
 		if (g_tick_flag == true) //check tick happened
 		{
 			g_tick_flag = false;   //clear tick_flag
@@ -78,7 +90,8 @@ int main()
 				//Enable Motor Linear Actuator
 				case 2:
 				{
-					//en_motor_lin_act();    //enable motor on the linear actuator
+					en_motor_lin_act();    //enable motor on the linear actuator
+				
 					state = 3;
 					
 					break;
@@ -98,13 +111,28 @@ int main()
 				//Drive by wire IO
 				case 4:
 				{
+					new_canMsg = sMsgObjectRx.pui8MsgData && 0x0000FF0000000000;//CAN message taken at a later time.
+					if(sMsgObjectRx.ui32MsgID == 18FF0313)
+					{
+						if( abs((new_canMsg - initial_canMsg /.1) > TORQUE_THRESHOLD)//100ms Update rate, assuming time is in seconds.
+						{
+							state = 6;//Will change to state 6, disabling the actuators but leaving the steering and driveshaft in place w/out zeroing.
+							break;
+						}
+					}
+					
 					if (g_stop_flag == true)
 					{
 						g_stop_flag = false;   //clear stop flag
+						PF2 &= 0x00;					 //Turn off LED
 						state = 5;             //start stop sequence
 					}
+					
+					else
+					{
 					DriveByWireIO();       //read inputs and output to actuators
 					PF2 ^= 0x04;           //toggle PF2
+					}
 					
 					break;
 				}
