@@ -32,6 +32,7 @@ int main()
 	
 	uint32_t buttonPressed;
 	initialization();
+	
 	tCANMsgObject sMsgObjectRx;
 	uint32_t initial_canMsg;
 	uint32_t new_canMsg;
