@@ -48,7 +48,7 @@ void CAN_Setup(void)
 	CANInit(CAN0_BASE);
 
 		
-	// Configure the controller for 500 Kbit operation.
+	// Configure the controller for 250 Kbit operation.
 	CANBitRateSet(CAN0_BASE, SysCtlClockGet(), 250000);
 	
 	//Set the priority for the Update timer as priority 1
@@ -59,8 +59,8 @@ void CAN_Setup(void)
 	IntEnable(INT_CAN0);
 
 	//Set CAN0 to silent test mode
-	CAN0_CTL_R |= CAN_CTL_TEST;
-	CAN0_TST_R |= CAN_TST_SILENT;
+	//CAN0_CTL_R |= CAN_CTL_TEST;
+	//CAN0_TST_R |= CAN_TST_SILENT;
 	
 	//Start CAN0 peripheral
 	CANEnable(CAN0_BASE);

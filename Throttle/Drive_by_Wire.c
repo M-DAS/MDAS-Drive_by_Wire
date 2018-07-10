@@ -25,7 +25,7 @@ uint32_t scale_CAN_throttle_pos(uint32_t input)
 
 
 
-void Drive_by_Wire(void)
+void Drive_by_Wire(uint32_t throttle_in)
 {
 	uint32_t throttle_pos;
 	
