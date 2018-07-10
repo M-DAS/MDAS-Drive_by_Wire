@@ -64,7 +64,7 @@ int SetDACVoltage(uint16_t setPoint)
 	uint16_t ScaledVoltage25 = 0;
 	uint16_t ScaledVoltage5 = 0;
 	ScaledVoltage25 = ScalePercent12Bit(setPoint);
-	ScaledVoltage5 = ScaledVoltage25 << 2;
+	ScaledVoltage5 = ScaledVoltage25 << 1;
 	WriteDAC0(ScaledVoltage25);
 	WriteDAC1(ScaledVoltage5);
 	return 0;
