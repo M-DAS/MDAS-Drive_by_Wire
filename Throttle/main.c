@@ -33,11 +33,12 @@ int main()
 	while(1)
 	{
 		CANMessageGet(CAN0_BASE, 1, &sMsgObjectRx, MSG_OBJ_TYPE_RX);
-		if(sMsgObjectRx.ui32MsgID && 0x012EEEEE != 0x012EEEEE) continue;	//Will ignore if ID is incorrect
-		data_input = *sMsgObjectRx.pui8MsgData;
-		state = (data_input>> 16) && 0xFF;
-		target_throttle = data_input && 0xFFFF;
-		
+		if(sMsgObjectRx.ui32MsgID && 0x012EEEEE != 0x012EEEEE)
+		{	//Will ignore if ID is incorrect
+			data_input = *sMsgObjectRx.pui8MsgData;
+			state = (data_input>> 16) && 0xFF;
+			target_throttle = data_input && 0xFFFF;
+		}
 		if (g_tick_flag == true)   //Check if tick happened
 		{
 			g_tick_flag = false;     //clear tick_flag
