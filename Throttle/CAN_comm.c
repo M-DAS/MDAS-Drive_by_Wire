@@ -68,9 +68,9 @@ void CAN_Setup(void)
 
 	// Configure a receive object.
 	sMsgObjectRx.ui32MsgID = throttle_board_address;
-	sMsgObjectRx.ui32MsgIDMask = 0x1FFFFFFF;
+	sMsgObjectRx.ui32MsgIDMask = 0x012EEEEE;
 	sMsgObjectRx.ui32Flags = MSG_OBJ_RX_INT_ENABLE | MSG_OBJ_USE_ID_FILTER;
-	sMsgObjectRx.ui32MsgLen = 8;
+	sMsgObjectRx.ui32MsgLen = 3;
 	CANMessageSet(CAN0_BASE, 2, &sMsgObjectRx, MSG_OBJ_TYPE_RX);
 }
 

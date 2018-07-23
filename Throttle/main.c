@@ -19,12 +19,30 @@
 #include "inc/hw_gpio.h"
 #include "inc/hw_memmap.h"
 #include "driverlib/can.h"
+#include "dac.c"
 
-tCANMsgObject sMsgObjectRx;
+tCANMsgObject sMsgObjectRx, sMsgObjectTx;
 uint32_t state = 0;
 uint32_t missed_CAN_data_cnt = 0;
 uint32_t data_input;
 uint32_t target_throttle;
+
+void receiveNew(){
+		CANMessageGet(CAN0_BASE, 1, &sMsgObjectRx, MSG_OBJ_TYPE_RX);
+			if(sMsgObjectRx.ui32MsgID != 0x012EEEEE)
+			{		//Will ignore if ID is incorrect
+				data_input = *sMsgObjectRx.pui8MsgData;
+				state = (data_input>> 16) && 0xFF;
+				target_throttle = data_input && 0xFFFF;
+			}
+}
+
+void sendNew(uint32_t newThrottle){
+		sMsgObjectTx.ui32MsgID = 0x012EEEEE;
+		*sMsgObjectTx.pui8MsgData = state << 8;
+		*sMsgObjectTx.pui8MsgData += newThrottle; //Concatinate it.
+		CANMessageSet(CAN0_BASE, 1, &sMsgObjectTx, MSG_OBJ_TYPE_TX);
+}
 
 int main()
 {
@@ -32,21 +50,15 @@ int main()
 	initialization();
 	while(1)
 	{
-		CANMessageGet(CAN0_BASE, 1, &sMsgObjectRx, MSG_OBJ_TYPE_RX);
-		if(sMsgObjectRx.ui32MsgID && 0x012EEEEE != 0x012EEEEE)
-		{	//Will ignore if ID is incorrect
-			data_input = *sMsgObjectRx.pui8MsgData;
-			state = (data_input>> 16) && 0xFF;
-			target_throttle = data_input && 0xFFFF;
-		}
+		receiveNew();
 		if (g_tick_flag == true)   //Check if tick happened
 		{
 			g_tick_flag = false;     //clear tick_flag
 			
 			switch(state)
 			{
-		
 				
+				receiveNew();				
 				//Normal drive mode
 				//Throttle position is determined by pedal
 				case 0x00:
