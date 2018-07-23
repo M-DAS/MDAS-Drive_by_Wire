@@ -12,12 +12,23 @@
 #include "driverlib/i2c.h"
 #include "driverlib/pin_map.h"
 
-
+const uint16_t LowDACPercent[] = {408,421,434,447,460,473,486,499,512,525,538,551,564,577,591,604,617,630,643,656,669,682,695,708,721,734,747,760,773,786,800,813,826,839,852,865,878,891,904,917,930,943,956,969,982,995,1008,1022,1035,1048,1061,1074,1087,1100,1113,1126,1139,1152,1165,1178,1191,1204,1217,1231,1244,1257,1270,1283,1296,1309,1322,1335,1348,1361,1374,1387,1400,1413,1426,1440,1453,1466,1479,1492,1505,1518,1531,1544,1557,1570,1583,1596,1609,1622,1635,1648,1662,1675,1688,1701};	
+	
 uint16_t ScalePercent12Bit(uint16_t TargetPercent)
 {
 	uint16_t TargetScaled;
-	
-	
+	if (TargetPercent <101 && TargetPercent > 0)
+	{
+		TargetScaled = LowDACPercent[TargetPercent];
+	}
+	else if (TargetPercent == 0)
+	{
+		TargetScaled = 0;
+	}
+	else if (TargetPercent > 100)
+	{
+		TargetScaled = 0;
+	}
 	return TargetScaled;
 }
 
@@ -64,7 +75,7 @@ int SetDACVoltage(uint16_t setPoint)
 	uint16_t ScaledVoltage25 = 0;
 	uint16_t ScaledVoltage5 = 0;
 	ScaledVoltage25 = ScalePercent12Bit(setPoint);
-	ScaledVoltage5 = ScaledVoltage25 << 1;
+	ScaledVoltage5 = ScaledVoltage25 << 2;
 	WriteDAC0(ScaledVoltage25);
 	WriteDAC1(ScaledVoltage5);
 	return 0;
