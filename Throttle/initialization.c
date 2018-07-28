@@ -41,8 +41,8 @@ void initialization(void)
 	PORTF_Setup();
 	Tick_Timer_Setup();
 	ADC0_Setup();
+	ADC1_Setup();
   CAN_Setup();
-	Digital_Pot_Setup();
 	
 	
 	

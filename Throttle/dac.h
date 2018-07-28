@@ -12,4 +12,4 @@
 #include "driverlib/i2c.h"
 #include "driverlib/pin_map.h"
 
-uint16_t SetDACVoltage(uint16_t setPoint);
+uint32_t SetDACVoltage(uint32_t setPoint);

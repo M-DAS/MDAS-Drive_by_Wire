@@ -8,37 +8,46 @@
 
 #include "Pedal_ADC.h"
 #include "Digital_pot.h"
+#include "dac.h"
 
 
 //Throttle scaling
 uint32_t scale_pedal_throttle_pos(uint32_t input)
 {
-	uint32_t digital_pot1;
-	if (input < 2000)
-			digital_pot1 = 75;
+	uint32_t throttle_percent;
+	if (input > 3070)
+			throttle_percent = 75;
+	else if (input < 48)
+	{
+			throttle_percent = 0;
+	}
 	else
 	{
-		digital_pot1 = 4777*input - 4164982;
-		digital_pot1 = digital_pot1>>16;
+		//Scale value to be a percent from 0-4095
 	}
-	return (digital_pot1);
+	return (throttle_percent);
 }
 
 
 
 void Drive_by_Pedal(void)
 {
-	uint32_t ADC_value;
-	uint32_t throttle_pos;
+	uint32_t adc_pedal_low;
+	uint32_t adc_pedal_high;
+	uint32_t throttle_percent;
 	
-	//ADC_value = get_throttle_input();
-	ADC_value = 2000;
+	adc_pedal_low = get_throttle_input_low();
+	adc_pedal_high = get_throttle_input_high();
 	
-	throttle_pos = scale_pedal_throttle_pos(ADC_value);
 	
-	//send out throttle position to SPI digital potentiometer
-	update_digital_pot1(throttle_pos);
-	update_digital_pot2(throttle_pos>>1);
+	if (adc_pedal_low == (adc_pedal_high >> 1))
+	{
+		throttle_percent = scale_pedal_throttle_pos(adc_pedal_high);
+	}
+	
+	
+	//send out throttle position to I2C DAC
+	SetDACVoltage(throttle_percent);
 }
 
 
