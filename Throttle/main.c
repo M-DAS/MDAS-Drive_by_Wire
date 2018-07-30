@@ -19,22 +19,26 @@
 #include "inc/hw_gpio.h"
 #include "inc/hw_memmap.h"
 #include "driverlib/can.h"
-#include "dac.c"
+#include "dac.h"
+#include "Pedal_ADC.c"
+
 
 tCANMsgObject sMsgObjectRx, sMsgObjectTx;
 uint32_t state = 0;
 uint32_t missed_CAN_data_cnt = 0;
 uint32_t data_input;
-uint32_t target_throttle;
+uint32_t target_throttle = 0;
 
-void receiveNew(){
+
+uint32_t receiveNew(){//See if can come up with a better way to do this.
 		CANMessageGet(CAN0_BASE, 1, &sMsgObjectRx, MSG_OBJ_TYPE_RX);
 			if(sMsgObjectRx.ui32MsgID != 0x012EEEEE)
 			{		//Will ignore if ID is incorrect
 				data_input = *sMsgObjectRx.pui8MsgData;
-				state = (data_input>> 16) && 0xFF;
-				target_throttle = data_input && 0xFFFF;
+				state = (data_input>> 16) & 0xFF;
+				target_throttle = data_input & 0xFFFF;
 			}
+			return target_throttle;
 }
 
 void sendNew(uint32_t newThrottle){
@@ -46,7 +50,9 @@ void sendNew(uint32_t newThrottle){
 
 int main()
 {
-	
+	uint32_t thrott_begone = 0;
+	uint32_t prevPedal = 0;
+	uint32_t safeADCvalue = 0;
 	initialization();
 	while(1)
 	{
@@ -57,19 +63,17 @@ int main()
 			
 			switch(state)
 			{
-				
-				receiveNew();				
+						
 				//Normal drive mode
+	
 				//Throttle position is determined by pedal
 				case 0x00:
 				{
 					//PF3 = 0x08;
 					//PF2 = 0x00;
-	
 					g_tick_flag = false;   //clear tick_flag
-					Drive_by_Pedal();
-					
-					
+					prevPedal = Drive_by_Pedal(prevPedal);
+				
 					if (g_throttle_mode == true)
 					{
 						state = 1;
@@ -87,8 +91,6 @@ int main()
 					//Check throttle mode flag
 					if (g_throttle_mode == false)
 						state = 0;
-					
-						
 					//Update missing CAN data counter
 					if (g_new_CAN_data == true)
 					{
@@ -97,20 +99,15 @@ int main()
 					}
 					else
 						missed_CAN_data_cnt++;
-					
-					
 					//Too many missing CAN data frames reset to drive by pedal mode
 					if (missed_CAN_data_cnt >= 2)
 					{
 						g_throttle_mode = false;
 						state = 0;
 					}
-					
 					//Send throttle postion from CAN to motor controller
-					Drive_by_Wire();
-					
+					Drive_by_Wire(target_throttle);
 					//PF2 ^= 0x04;                // toggle PF2
-					
 					break;
 				}
 				
@@ -119,8 +116,6 @@ int main()
 				{
 					if (g_throttle_mode == false)
 						state = 0;
-					
-						
 					//Update missing CAN data counter
 					if (g_new_CAN_data == true)
 					{
@@ -129,28 +124,31 @@ int main()
 					}
 					else
 						missed_CAN_data_cnt++;
-					
-					
 					//Too many missing CAN data frames reset to drive by pedal mode
 					if (missed_CAN_data_cnt >= 2)
 					{
 						g_throttle_mode = false;
 						state = 0;
 					}
-					
-					
 				}
 				
 				case 0x33: //Error State
 				{
-					
+					while(true){
+						SetDACVoltage(0);
+						thrott_begone = get_throttle_input();
+						if(thrott_begone < safeADCvalue){
+							break;
+						}
+					}
 					
 				}
 				
 				case 0xFF: //Emergency Stop
-				{
-					
-					
+				{//Done 
+					while(1){
+						SetDACVoltage(0);
+					}
 				}
 				
 				

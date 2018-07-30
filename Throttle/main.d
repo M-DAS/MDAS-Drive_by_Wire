@@ -13,6 +13,7 @@
 .\main.o: C:\ti\TivaWare_C_Series-2.1.4.178\inc/hw_memmap.h
 .\main.o: C:\ti\TivaWare_C_Series-2.1.4.178\driverlib/can.h
 .\main.o: dac.c
+.\main.o: dac.h
 .\main.o: C:\ti\TivaWare_C_Series-2.1.4.178\inc/tm4c123gh6pm.h
 .\main.o: C:\ti\TivaWare_C_Series-2.1.4.178\inc/hw_types.h
 .\main.o: C:\ti\TivaWare_C_Series-2.1.4.178\driverlib/sysctl.h

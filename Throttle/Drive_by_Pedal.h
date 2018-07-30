@@ -36,7 +36,7 @@
 /***********************
 * Public Functions     *
 ***********************/
-void Drive_by_Pedal(void);
+uint32_t Drive_by_Pedal(uint32_t prevPedal);
 
 #endif /* _DRIVEBYPEDAL_H_ */
 
