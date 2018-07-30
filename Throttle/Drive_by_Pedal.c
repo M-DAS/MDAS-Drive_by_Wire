@@ -15,15 +15,13 @@
 uint32_t scale_pedal_throttle_pos(uint32_t input)
 {
 	uint32_t throttle_percent;
-	if (input > 3070)
-			throttle_percent = 75;
-	else if (input < 48)
+	if (input < 32)
 	{
 			throttle_percent = 0;
 	}
 	else
 	{
-		//Scale value to be a percent from 0-4095
+		throttle_percent = ((400*input)>>14);
 	}
 	return (throttle_percent);
 }
