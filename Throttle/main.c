@@ -112,6 +112,9 @@ int main()
 				}
 				
 				
+				
+				
+				
 				case 0x22:	//Debug
 				{
 					if (g_throttle_mode == false)
@@ -130,7 +133,11 @@ int main()
 						g_throttle_mode = false;
 						state = 0;
 					}
+					
 				}
+				
+				
+				
 				
 				case 0x33: //Error State
 				{
@@ -143,6 +150,7 @@ int main()
 					}
 					
 				}
+				
 				
 				case 0xFF: //Emergency Stop
 				{//Done 
