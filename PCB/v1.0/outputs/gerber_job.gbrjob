@@ -1,0 +1,13 @@
+G04 Gerber job file.*
+%TF.FileFunction,JobInfo*%
+%TF.GenerationSoftware,Autodesk,EAGLE,9.0.0*%
+%TF.CreationDate,2018-07-03T14:12:15Z*%
+%TF.Part,Single*%
+%MOMM*%
+%TJ.B_Owner,Cristian Adam <cradam@umd.umich.edu>*%
+%TJ.B_ID,MDAS_Controller_V1*%
+%TJ.B_LayerNum,4*%
+%TJ.B_Thickness,1.994100*%
+%TJ.B_Size_X,54.813200*%
+%TJ.B_Size_Y,55.880000*%
+M02*
