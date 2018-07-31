@@ -36,7 +36,7 @@
 /***********************
 * Public Functions     *
 ***********************/
-void Drive_by_Wire(uint32_t throttle_in);
+void Drive_by_Wire(void);
 
 #endif /* _DRIVEBYWIRE_H_ */
 

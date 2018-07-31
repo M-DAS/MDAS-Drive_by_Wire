@@ -9,6 +9,7 @@
 .\initialization.o: C:\ti\TivaWare_C_Series-2.1.4.178\driverlib/interrupt.h
 .\initialization.o: C:\ti\TivaWare_C_Series-2.1.4.178\driverlib/gpio.h
 .\initialization.o: C:\ti\TivaWare_C_Series-2.1.4.178\inc/hw_gpio.h
+.\initialization.o: C:\ti\TivaWare_C_Series-2.1.4.178\driverlib/i2c.h
 .\initialization.o: Globals_and_Defines.h
 .\initialization.o: Switches_PORTF.h
 .\initialization.o: Tick_Timer.h

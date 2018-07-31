@@ -5,7 +5,6 @@
 .\drive_by_pedal.o: initialization.h
 .\drive_by_pedal.o: Pedal_ADC.h
 .\drive_by_pedal.o: Digital_pot.h
-.\drive_by_pedal.o: dac.c
 .\drive_by_pedal.o: dac.h
 .\drive_by_pedal.o: C:\ti\TivaWare_C_Series-2.1.4.178\inc/tm4c123gh6pm.h
 .\drive_by_pedal.o: C:\ti\TivaWare_C_Series-2.1.4.178\inc/hw_memmap.h

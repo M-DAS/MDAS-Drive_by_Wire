@@ -10,6 +10,7 @@
 #include "driverlib/interrupt.h"
 #include "driverlib/gpio.h"
 #include "inc/hw_gpio.h"
+#include "driverlib/i2c.h"
 
 #include "Globals_and_Defines.h"
 
@@ -44,6 +45,20 @@ void initialization(void)
 	ADC1_Setup();
   CAN_Setup();
 	
+	//Turn on clock to GPIOB and I2C0
+	SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOB);
+	SysCtlPeripheralEnable(SYSCTL_PERIPH_I2C0);
+	while(!SysCtlPeripheralReady(SYSCTL_PERIPH_I2C0))
+	{}
+		
+	//Configure GPIOB pins to be used by I2C0
+	GPIOPinConfigure(GPIO_PB2_I2C0SCL);
+	GPIOPinConfigure(GPIO_PB3_I2C0SDA);
+	GPIOPinTypeI2CSCL(GPIO_PORTB_BASE, GPIO_PIN_2);
+	GPIOPinTypeI2C(GPIO_PORTB_BASE, GPIO_PIN_3);
+		
+	//Set the Launcpad as the I2C master with the slow clock 100 Kbps	
+	I2CMasterInitExpClk(I2C0_BASE, SysCtlClockGet(), false);
 	
 	
 	/*************************

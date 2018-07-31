@@ -1,21 +1,20 @@
 Dependencies for Project 'throttle', Target 'Target 1': (DO NOT MODIFY !)
-F (.\startup.s)(0x5AC1330A)(--cpu Cortex-M4 --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123--list .\startup.lst --xref -o .\startup.o --depend .\startup.d)
-F (.\main.c)(0x5B5A6721)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork -IC:\ti\TivaWare_C_Series-2.1.4.178 -IC:\ti\TivaWare_C_Series-2.1.4.178\driverlib -IC:\ti\TivaWare_C_Series-2.1.4.178\inc-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123-DTM4C123GH6PM-o .\main.o --omf_browse .\main.crf --depend .\main.d)
+F (.\startup.s)(0x5B5639FA)(--cpu Cortex-M4 --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123--list .\startup.lst --xref -o .\startup.o --depend .\startup.d)
+F (.\main.c)(0x5B5FB5CF)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork -IC:\ti\TivaWare_C_Series-2.1.4.178 -IC:\ti\TivaWare_C_Series-2.1.4.178\driverlib -IC:\ti\TivaWare_C_Series-2.1.4.178\inc-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123-DTM4C123GH6PM-o .\main.o --omf_browse .\main.crf --depend .\main.d)
 I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C87C24)
 I (C:\Keil\ARM\ARMCC\include\stdbool.h)(0x51C87C24)
-I (Globals_and_Defines.h)(0x5AD23FA6)
-I (initialization.h)(0x5AC13461)
-I (Drive_by_Pedal.h)(0x5AC29BAB)
-I (Drive_by_Wire.h)(0x5AC534F6)
+I (Globals_and_Defines.h)(0x5B5F9EAF)
+I (initialization.h)(0x5B5639FA)
+I (Drive_by_Pedal.h)(0x5B5639FA)
+I (Drive_by_Wire.h)(0x5B5639FA)
 I (C:\Keil\ARM\ARMCC\include\math.h)(0x51C87C24)
-I (Switches_PORTF.h)(0x5AC137A3)
-I (CAN_comm.h)(0x5AC14716)
+I (Switches_PORTF.h)(0x5B5639FA)
+I (CAN_comm.h)(0x5B5639FA)
 I (C:\ti\TivaWare_C_Series-2.1.4.178\driverlib\gpio.h)(0x5B43E76B)
 I (C:\ti\TivaWare_C_Series-2.1.4.178\inc\hw_gpio.h)(0x5B43E7B6)
 I (C:\ti\TivaWare_C_Series-2.1.4.178\inc\hw_memmap.h)(0x5B43E7B6)
 I (C:\ti\TivaWare_C_Series-2.1.4.178\driverlib\can.h)(0x5B43E76B)
-I (dac.c)(0x5B566A4B)
-I (dac.h)(0x5B5669F8)
+I (dac.h)(0x5B5A5829)
 I (C:\ti\TivaWare_C_Series-2.1.4.178\inc\tm4c123gh6pm.h)(0x5B43E7B6)
 I (C:\ti\TivaWare_C_Series-2.1.4.178\inc\hw_types.h)(0x5B43E7B6)
 I (C:\ti\TivaWare_C_Series-2.1.4.178\driverlib\sysctl.h)(0x5B43E76B)
@@ -23,10 +22,10 @@ I (C:\ti\TivaWare_C_Series-2.1.4.178\driverlib\interrupt.h)(0x5B43E76B)
 I (C:\ti\TivaWare_C_Series-2.1.4.178\driverlib\timer.h)(0x5B43E76B)
 I (C:\ti\TivaWare_C_Series-2.1.4.178\driverlib\i2c.h)(0x5B43E76B)
 I (C:\ti\TivaWare_C_Series-2.1.4.178\driverlib\pin_map.h)(0x5B43E76B)
-F (.\Globals_and_Defines.c)(0x5AD23FA6)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork -IC:\ti\TivaWare_C_Series-2.1.4.178 -IC:\ti\TivaWare_C_Series-2.1.4.178\driverlib -IC:\ti\TivaWare_C_Series-2.1.4.178\inc-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123-DTM4C123GH6PM-o .\globals_and_defines.o --omf_browse .\globals_and_defines.crf --depend .\globals_and_defines.d)
+F (.\Globals_and_Defines.c)(0x5B5639FA)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork -IC:\ti\TivaWare_C_Series-2.1.4.178 -IC:\ti\TivaWare_C_Series-2.1.4.178\driverlib -IC:\ti\TivaWare_C_Series-2.1.4.178\inc-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123-DTM4C123GH6PM-o .\globals_and_defines.o --omf_browse .\globals_and_defines.crf --depend .\globals_and_defines.d)
 I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C87C24)
 I (C:\Keil\ARM\ARMCC\include\stdbool.h)(0x51C87C24)
-F (.\initialization.c)(0x5AC53314)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork -IC:\ti\TivaWare_C_Series-2.1.4.178 -IC:\ti\TivaWare_C_Series-2.1.4.178\driverlib -IC:\ti\TivaWare_C_Series-2.1.4.178\inc-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123-DTM4C123GH6PM-o .\initialization.o --omf_browse .\initialization.crf --depend .\initialization.d)
+F (.\initialization.c)(0x5B5FC421)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork -IC:\ti\TivaWare_C_Series-2.1.4.178 -IC:\ti\TivaWare_C_Series-2.1.4.178\driverlib -IC:\ti\TivaWare_C_Series-2.1.4.178\inc-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123-DTM4C123GH6PM-o .\initialization.o --omf_browse .\initialization.crf --depend .\initialization.d)
 I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C87C24)
 I (C:\Keil\ARM\ARMCC\include\stdbool.h)(0x51C87C24)
 I (C:\ti\TivaWare_C_Series-2.1.4.178\inc\tm4c123gh6pm.h)(0x5B43E7B6)
@@ -37,13 +36,14 @@ I (C:\ti\TivaWare_C_Series-2.1.4.178\driverlib\sysctl.h)(0x5B43E76B)
 I (C:\ti\TivaWare_C_Series-2.1.4.178\driverlib\interrupt.h)(0x5B43E76B)
 I (C:\ti\TivaWare_C_Series-2.1.4.178\driverlib\gpio.h)(0x5B43E76B)
 I (C:\ti\TivaWare_C_Series-2.1.4.178\inc\hw_gpio.h)(0x5B43E7B6)
-I (Globals_and_Defines.h)(0x5AD23FA6)
-I (Switches_PORTF.h)(0x5AC137A3)
-I (Tick_Timer.h)(0x5AC1330D)
-I (Pedal_ADC.h)(0x5AC29BAB)
-I (CAN_comm.h)(0x5AC14716)
-I (Digital_Pot.h)(0x5ACFD1BD)
-F (.\Tick_Timer.c)(0x5AD25F7E)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork -IC:\ti\TivaWare_C_Series-2.1.4.178 -IC:\ti\TivaWare_C_Series-2.1.4.178\driverlib -IC:\ti\TivaWare_C_Series-2.1.4.178\inc-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123-DTM4C123GH6PM-o .\tick_timer.o --omf_browse .\tick_timer.crf --depend .\tick_timer.d)
+I (C:\ti\TivaWare_C_Series-2.1.4.178\driverlib\i2c.h)(0x5B43E76B)
+I (Globals_and_Defines.h)(0x5B5F9EAF)
+I (Switches_PORTF.h)(0x5B5639FA)
+I (Tick_Timer.h)(0x5B5639FA)
+I (Pedal_ADC.h)(0x5B5A5947)
+I (CAN_comm.h)(0x5B5639FA)
+I (Digital_Pot.h)(0x5B5639FA)
+F (.\Tick_Timer.c)(0x5B5639FA)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork -IC:\ti\TivaWare_C_Series-2.1.4.178 -IC:\ti\TivaWare_C_Series-2.1.4.178\driverlib -IC:\ti\TivaWare_C_Series-2.1.4.178\inc-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123-DTM4C123GH6PM-o .\tick_timer.o --omf_browse .\tick_timer.crf --depend .\tick_timer.d)
 I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C87C24)
 I (C:\Keil\ARM\ARMCC\include\stdbool.h)(0x51C87C24)
 I (C:\ti\TivaWare_C_Series-2.1.4.178\inc\tm4c123gh6pm.h)(0x5B43E7B6)
@@ -51,8 +51,8 @@ I (C:\ti\TivaWare_C_Series-2.1.4.178\inc\hw_memmap.h)(0x5B43E7B6)
 I (C:\ti\TivaWare_C_Series-2.1.4.178\driverlib\sysctl.h)(0x5B43E76B)
 I (C:\ti\TivaWare_C_Series-2.1.4.178\driverlib\interrupt.h)(0x5B43E76B)
 I (C:\ti\TivaWare_C_Series-2.1.4.178\driverlib\timer.h)(0x5B43E76B)
-I (Globals_and_Defines.h)(0x5AD23FA6)
-F (.\Switches_PORTF.c)(0x5AC137A3)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork -IC:\ti\TivaWare_C_Series-2.1.4.178 -IC:\ti\TivaWare_C_Series-2.1.4.178\driverlib -IC:\ti\TivaWare_C_Series-2.1.4.178\inc-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123-DTM4C123GH6PM-o .\switches_portf.o --omf_browse .\switches_portf.crf --depend .\switches_portf.d)
+I (Globals_and_Defines.h)(0x5B5F9EAF)
+F (.\Switches_PORTF.c)(0x5B5639FA)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork -IC:\ti\TivaWare_C_Series-2.1.4.178 -IC:\ti\TivaWare_C_Series-2.1.4.178\driverlib -IC:\ti\TivaWare_C_Series-2.1.4.178\inc-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123-DTM4C123GH6PM-o .\switches_portf.o --omf_browse .\switches_portf.crf --depend .\switches_portf.d)
 I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C87C24)
 I (C:\Keil\ARM\ARMCC\include\stdbool.h)(0x51C87C24)
 I (C:\ti\TivaWare_C_Series-2.1.4.178\inc\tm4c123gh6pm.h)(0x5B43E7B6)
@@ -63,8 +63,8 @@ I (C:\ti\TivaWare_C_Series-2.1.4.178\driverlib\sysctl.h)(0x5B43E76B)
 I (C:\ti\TivaWare_C_Series-2.1.4.178\driverlib\interrupt.h)(0x5B43E76B)
 I (C:\ti\TivaWare_C_Series-2.1.4.178\driverlib\gpio.h)(0x5B43E76B)
 I (C:\ti\TivaWare_C_Series-2.1.4.178\inc\hw_gpio.h)(0x5B43E7B6)
-I (Globals_and_Defines.h)(0x5AD23FA6)
-F (.\CAN_comm.c)(0x5B455731)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork -IC:\ti\TivaWare_C_Series-2.1.4.178 -IC:\ti\TivaWare_C_Series-2.1.4.178\driverlib -IC:\ti\TivaWare_C_Series-2.1.4.178\inc-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123-DTM4C123GH6PM-o .\can_comm.o --omf_browse .\can_comm.crf --depend .\can_comm.d)
+I (Globals_and_Defines.h)(0x5B5F9EAF)
+F (.\CAN_comm.c)(0x5B5FAFDE)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork -IC:\ti\TivaWare_C_Series-2.1.4.178 -IC:\ti\TivaWare_C_Series-2.1.4.178\driverlib -IC:\ti\TivaWare_C_Series-2.1.4.178\inc-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123-DTM4C123GH6PM-o .\can_comm.o --omf_browse .\can_comm.crf --depend .\can_comm.d)
 I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C87C24)
 I (C:\Keil\ARM\ARMCC\include\stdbool.h)(0x51C87C24)
 I (C:\ti\TivaWare_C_Series-2.1.4.178\inc\tm4c123gh6pm.h)(0x5B43E7B6)
@@ -76,8 +76,8 @@ I (C:\ti\TivaWare_C_Series-2.1.4.178\driverlib\gpio.h)(0x5B43E76B)
 I (C:\ti\TivaWare_C_Series-2.1.4.178\driverlib\timer.h)(0x5B43E76B)
 I (C:\ti\TivaWare_C_Series-2.1.4.178\driverlib\pin_map.h)(0x5B43E76B)
 I (C:\ti\TivaWare_C_Series-2.1.4.178\driverlib\can.h)(0x5B43E76B)
-I (Globals_and_Defines.h)(0x5AD23FA6)
-F (.\Pedal_ADC.c)(0x5ACF93E9)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork -IC:\ti\TivaWare_C_Series-2.1.4.178 -IC:\ti\TivaWare_C_Series-2.1.4.178\driverlib -IC:\ti\TivaWare_C_Series-2.1.4.178\inc-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123-DTM4C123GH6PM-o .\pedal_adc.o --omf_browse .\pedal_adc.crf --depend .\pedal_adc.d)
+I (Globals_and_Defines.h)(0x5B5F9EAF)
+F (.\Pedal_ADC.c)(0x5B5BB30E)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork -IC:\ti\TivaWare_C_Series-2.1.4.178 -IC:\ti\TivaWare_C_Series-2.1.4.178\driverlib -IC:\ti\TivaWare_C_Series-2.1.4.178\inc-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123-DTM4C123GH6PM-o .\pedal_adc.o --omf_browse .\pedal_adc.crf --depend .\pedal_adc.d)
 I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C87C24)
 I (C:\Keil\ARM\ARMCC\include\stdbool.h)(0x51C87C24)
 I (C:\ti\TivaWare_C_Series-2.1.4.178\inc\tm4c123gh6pm.h)(0x5B43E7B6)
@@ -85,16 +85,15 @@ I (C:\ti\TivaWare_C_Series-2.1.4.178\inc\hw_memmap.h)(0x5B43E7B6)
 I (C:\ti\TivaWare_C_Series-2.1.4.178\driverlib\sysctl.h)(0x5B43E76B)
 I (C:\ti\TivaWare_C_Series-2.1.4.178\driverlib\gpio.h)(0x5B43E76B)
 I (C:\ti\TivaWare_C_Series-2.1.4.178\driverlib\adc.h)(0x5B43E76B)
-I (Globals_and_Defines.h)(0x5AD23FA6)
-F (.\Drive_by_Pedal.c)(0x5B5A6703)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork -IC:\ti\TivaWare_C_Series-2.1.4.178 -IC:\ti\TivaWare_C_Series-2.1.4.178\driverlib -IC:\ti\TivaWare_C_Series-2.1.4.178\inc-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123-DTM4C123GH6PM-o .\drive_by_pedal.o --omf_browse .\drive_by_pedal.crf --depend .\drive_by_pedal.d)
+I (Globals_and_Defines.h)(0x5B5F9EAF)
+F (.\Drive_by_Pedal.c)(0x5B5FC1BF)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork -IC:\ti\TivaWare_C_Series-2.1.4.178 -IC:\ti\TivaWare_C_Series-2.1.4.178\driverlib -IC:\ti\TivaWare_C_Series-2.1.4.178\inc-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123-DTM4C123GH6PM-o .\drive_by_pedal.o --omf_browse .\drive_by_pedal.crf --depend .\drive_by_pedal.d)
 I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C87C24)
 I (C:\Keil\ARM\ARMCC\include\stdbool.h)(0x51C87C24)
-I (Globals_and_Defines.h)(0x5AD23FA6)
-I (initialization.h)(0x5AC13461)
-I (Pedal_ADC.h)(0x5AC29BAB)
-I (Digital_pot.h)(0x5ACFD1BD)
-I (dac.c)(0x5B566A4B)
-I (dac.h)(0x5B5669F8)
+I (Globals_and_Defines.h)(0x5B5F9EAF)
+I (initialization.h)(0x5B5639FA)
+I (Pedal_ADC.h)(0x5B5A5947)
+I (Digital_pot.h)(0x5B5639FA)
+I (dac.h)(0x5B5A5829)
 I (C:\ti\TivaWare_C_Series-2.1.4.178\inc\tm4c123gh6pm.h)(0x5B43E7B6)
 I (C:\ti\TivaWare_C_Series-2.1.4.178\inc\hw_memmap.h)(0x5B43E7B6)
 I (C:\ti\TivaWare_C_Series-2.1.4.178\inc\hw_types.h)(0x5B43E7B6)
@@ -104,21 +103,23 @@ I (C:\ti\TivaWare_C_Series-2.1.4.178\driverlib\gpio.h)(0x5B43E76B)
 I (C:\ti\TivaWare_C_Series-2.1.4.178\driverlib\timer.h)(0x5B43E76B)
 I (C:\ti\TivaWare_C_Series-2.1.4.178\driverlib\i2c.h)(0x5B43E76B)
 I (C:\ti\TivaWare_C_Series-2.1.4.178\driverlib\pin_map.h)(0x5B43E76B)
-F (.\Digital_Pot.c)(0x5AD2149B)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork -IC:\ti\TivaWare_C_Series-2.1.4.178 -IC:\ti\TivaWare_C_Series-2.1.4.178\driverlib -IC:\ti\TivaWare_C_Series-2.1.4.178\inc-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123-DTM4C123GH6PM-o .\digital_pot.o --omf_browse .\digital_pot.crf --depend .\digital_pot.d)
+F (.\Drive_by_Wire.c)(0x5B5FB2DA)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork -IC:\ti\TivaWare_C_Series-2.1.4.178 -IC:\ti\TivaWare_C_Series-2.1.4.178\driverlib -IC:\ti\TivaWare_C_Series-2.1.4.178\inc-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123-DTM4C123GH6PM-o .\drive_by_wire.o --omf_browse .\drive_by_wire.crf --depend .\drive_by_wire.d)
+I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C87C24)
+I (C:\Keil\ARM\ARMCC\include\stdbool.h)(0x51C87C24)
+I (Globals_and_Defines.h)(0x5B5F9EAF)
+I (initialization.h)(0x5B5639FA)
+I (Digital_pot.h)(0x5B5639FA)
+F (.\dac.c)(0x5B5FC387)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork -IC:\ti\TivaWare_C_Series-2.1.4.178 -IC:\ti\TivaWare_C_Series-2.1.4.178\driverlib -IC:\ti\TivaWare_C_Series-2.1.4.178\inc-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123-DTM4C123GH6PM-o .\dac.o --omf_browse .\dac.crf --depend .\dac.d)
+I (dac.h)(0x5B5A5829)
 I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C87C24)
 I (C:\Keil\ARM\ARMCC\include\stdbool.h)(0x51C87C24)
 I (C:\ti\TivaWare_C_Series-2.1.4.178\inc\tm4c123gh6pm.h)(0x5B43E7B6)
 I (C:\ti\TivaWare_C_Series-2.1.4.178\inc\hw_memmap.h)(0x5B43E7B6)
 I (C:\ti\TivaWare_C_Series-2.1.4.178\inc\hw_types.h)(0x5B43E7B6)
-I (C:\ti\TivaWare_C_Series-2.1.4.178\inc\hw_ssi.h)(0x5B43E7B6)
 I (C:\ti\TivaWare_C_Series-2.1.4.178\driverlib\sysctl.h)(0x5B43E76B)
+I (C:\ti\TivaWare_C_Series-2.1.4.178\driverlib\interrupt.h)(0x5B43E76B)
 I (C:\ti\TivaWare_C_Series-2.1.4.178\driverlib\gpio.h)(0x5B43E76B)
-I (C:\ti\TivaWare_C_Series-2.1.4.178\driverlib\ssi.h)(0x5B43E76B)
+I (C:\ti\TivaWare_C_Series-2.1.4.178\driverlib\timer.h)(0x5B43E76B)
+I (C:\ti\TivaWare_C_Series-2.1.4.178\driverlib\i2c.h)(0x5B43E76B)
 I (C:\ti\TivaWare_C_Series-2.1.4.178\driverlib\pin_map.h)(0x5B43E76B)
-F (.\Drive_by_Wire.c)(0x5B43FA39)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork -IC:\ti\TivaWare_C_Series-2.1.4.178 -IC:\ti\TivaWare_C_Series-2.1.4.178\driverlib -IC:\ti\TivaWare_C_Series-2.1.4.178\inc-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123-DTM4C123GH6PM-o .\drive_by_wire.o --omf_browse .\drive_by_wire.crf --depend .\drive_by_wire.d)
-I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C87C24)
-I (C:\Keil\ARM\ARMCC\include\stdbool.h)(0x51C87C24)
-I (Globals_and_Defines.h)(0x5AD23FA6)
-I (initialization.h)(0x5AC13461)
-I (Digital_pot.h)(0x5ACFD1BD)
 F (C:\ti\TivaWare_C_Series-2.1.4.178\driverlib\rvmdk\driverlib.lib)(0x5B43E76B)()
