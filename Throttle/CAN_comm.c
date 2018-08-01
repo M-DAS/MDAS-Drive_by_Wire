@@ -14,7 +14,7 @@
 
 #include "Globals_and_Defines.h"
 	
-
+uint8_t data_array[3];
 
 void CAN_Setup(void)
 {
@@ -52,7 +52,7 @@ void CAN_Setup(void)
 	CANBitRateSet(CAN0_BASE, SysCtlClockGet(), 250000);
 	
 	//Set the priority for the Update timer as priority 1
-	//IntPrioritySet(INT_CAN0, 0x20);
+	IntPrioritySet(INT_CAN0, 0x20);
 	
 	//Enable interrupts for CAN0
 	CANIntEnable(CAN0_BASE, CAN_INT_MASTER);
@@ -68,7 +68,7 @@ void CAN_Setup(void)
 
 	// Configure a receive object.
 	sMsgObjectRx.ui32MsgID = throttle_board_address;
-	sMsgObjectRx.ui32MsgIDMask = 0x012FFFFF;
+	sMsgObjectRx.ui32MsgIDMask = 0x012EEEEE;
 	sMsgObjectRx.ui32Flags = MSG_OBJ_RX_INT_ENABLE | MSG_OBJ_USE_ID_FILTER;
 	sMsgObjectRx.ui32MsgLen = 3;
 	CANMessageSet(CAN0_BASE, 2, &sMsgObjectRx, MSG_OBJ_TYPE_RX);
@@ -83,7 +83,6 @@ void CAN_Setup(void)
 void CAN0_Handler(void)
 {
 	uint32_t int_status, CAN_status;
-	uint8_t data_array[8];
 	tCANMsgObject sMsgObjectRx;
 	sMsgObjectRx.pui8MsgData = data_array;
 	
@@ -98,13 +97,16 @@ void CAN0_Handler(void)
 	{
 		CANMessageGet(CAN0_BASE, 2, &sMsgObjectRx, true);   //get received data
 		g_new_CAN_data = true;
-		if (data_array[0] == 0x04)
+		if(sMsgObjectRx.ui32MsgID != 0x12EEEEE) return;
+		if (data_array[0] == 0x22)
 		{
 			g_throttle_mode = true;
 			g_CAN_throttle_pos = 0x00000000;
-			g_CAN_throttle_pos |= data_array[2];
+			g_CAN_throttle_pos |= data_array[1];
 			g_CAN_throttle_pos = g_CAN_throttle_pos<<8;
-			g_CAN_throttle_pos = g_CAN_throttle_pos | data_array[1];
+			g_CAN_throttle_pos = g_CAN_throttle_pos | data_array[2];
+			
+			
 			
 			//g_CAN_throttle_pos = data_array[1];
 		}

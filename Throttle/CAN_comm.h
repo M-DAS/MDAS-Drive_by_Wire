@@ -31,7 +31,7 @@
 /***********************
 * Public Variables     *
 ***********************/
-
+extern uint8_t data_array[3];
 
 /***********************
 * Public Functions     *

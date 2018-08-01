@@ -22,23 +22,14 @@
 #include "dac.h"
 
 tCANMsgObject sMsgObjectRx, sMsgObjectTx;
-uint32_t state = 0;
+uint32_t state = 0x44;
 uint32_t missed_CAN_data_cnt = 0;
 uint32_t data_input;
 uint32_t target_throttle;
 
-void receiveNew(){
-		CANMessageGet(CAN0_BASE, 1, &sMsgObjectRx, MSG_OBJ_TYPE_RX);
-			if(sMsgObjectRx.ui32MsgID != 0x012EEEEE)
-			{		//Will ignore if ID is incorrect
-				data_input = *sMsgObjectRx.pui8MsgData;
-				state = (data_input>> 16) & 0xFF;
-				target_throttle = data_input & 0xFFFF;
-			}
-}
 
 void sendNew(uint32_t newThrottle){
-		sMsgObjectTx.ui32MsgID = 0x012EEEEE;
+		sMsgObjectTx.ui32MsgID = 0x012FFFFF;
 		*sMsgObjectTx.pui8MsgData = state << 8;
 		*sMsgObjectTx.pui8MsgData += newThrottle; //Concatinate it.
 		CANMessageSet(CAN0_BASE, 1, &sMsgObjectTx, MSG_OBJ_TYPE_TX);
@@ -50,15 +41,16 @@ int main()
 	initialization();
 	while(1)
 	{
-		receiveNew();
+		state = data_array[0];
+		target_throttle = data_array[1];
+		target_throttle = (target_throttle<<8)|data_array[2];
+		//SetDACVoltage(50);
 		if (g_tick_flag == true)   //Check if tick happened
 		{
 			g_tick_flag = false;     //clear tick_flag
 			
 			switch(state)
-			{
-				
-				receiveNew();				
+			{				
 				//Normal drive mode
 				//Throttle position is determined by pedal
 				case 0x00:
@@ -69,10 +61,10 @@ int main()
 					g_tick_flag = false;   //clear tick_flag
 					Drive_by_Pedal();
 					
-					
+					SetDACVoltage(99);
 					if (g_throttle_mode == true)
 					{
-						state = 1;
+						state = 0x11;
 						//PF3 = 0x00;
 					}
 					break;
@@ -86,7 +78,7 @@ int main()
 				{
 					//Check throttle mode flag
 					if (g_throttle_mode == false)
-						state = 0;
+						state = 0x00;
 					
 						
 					//Update missing CAN data counter
@@ -117,11 +109,12 @@ int main()
 				
 				case 0x22:	//Debug
 				{
-					if (g_throttle_mode == false)
-						state = 0;
+					//if (g_throttle_mode == false)
+						//state = 0;
 					
 						
 					//Update missing CAN data counter
+					/*
 					if (g_new_CAN_data == true)
 					{
 						missed_CAN_data_cnt = 0;
@@ -137,20 +130,22 @@ int main()
 						g_throttle_mode = false;
 						state = 0;
 					}
-					
-					
+					*/
+					//SetDACVoltage(target_throttle);
+					SetDACVoltage(50);
+					break;
 				}
 				
 				case 0x33: //Error State
 				{
 					SetDACVoltage(0);
-					
+					break;
 				}
 				
 				case 0xFF: //Emergency Stop
 				{
 					
-					
+					break;
 				}
 				
 				
