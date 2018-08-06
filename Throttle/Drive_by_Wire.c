@@ -7,28 +7,12 @@
 #include "initialization.h"
 
 #include "Digital_pot.h"
+#include "dac.h"
 
 
 //Throttle scaling
-uint32_t scale_CAN_throttle_pos(uint32_t input)
+void Drive_by_Wire(uint32_t throttle_percent)
 {
-	uint32_t digital_pot1;
-	if (input < 2000)
-			//digital_pot1 = 75;
-	//
-	return (digital_pot1);
-}
-
-
-
-void Drive_by_Wire(uint32_t throttle_in)
-{
-	uint32_t throttle_pos;
-	
-	throttle_pos = scale_CAN_throttle_pos(g_CAN_throttle_pos);
-	
-	//send out throttle position to SPI digital potentiometer
-	//update_digital_pot1(throttle_pos);
-	//update_digital_pot2(throttle_pos>>1);
+	SetDACVoltage(throttle_percent);
 }
 
