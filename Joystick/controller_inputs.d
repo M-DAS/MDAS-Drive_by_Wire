@@ -1,9 +1,0 @@
-.\controller_inputs.o: Controller_Inputs.c
-.\controller_inputs.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
-.\controller_inputs.o: C:\Keil\ARM\ARMCC\bin\..\include\stdbool.h
-.\controller_inputs.o: C:\ti\TivaWare_C_Series-2.1.4.178\inc/tm4c123gh6pm.h
-.\controller_inputs.o: C:\ti\TivaWare_C_Series-2.1.4.178\inc/hw_memmap.h
-.\controller_inputs.o: C:\ti\TivaWare_C_Series-2.1.4.178\driverlib/sysctl.h
-.\controller_inputs.o: C:\ti\TivaWare_C_Series-2.1.4.178\driverlib/gpio.h
-.\controller_inputs.o: C:\ti\TivaWare_C_Series-2.1.4.178\driverlib/adc.h
-.\controller_inputs.o: Globals_and_Defines.h
