@@ -3277,6 +3277,10 @@ Please make sure your boards conform to these design rules.</description>
 <element name="C2" library="adafruit" package="C1206K" value="10uF" x="21.59" y="18.415" rot="R90"/>
 <element name="R12" library="adafruit" package="R0603" value="11k" x="44.45" y="3.175"/>
 <element name="R13" library="adafruit" package="R0603" value="21k" x="41.275" y="3.175"/>
+<element name="J1" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" package="JST-6-SMD-VERT-1.0MM" package3d_urn="urn:adsk.eagle:package:38270/1" value="JST_6_PIN_VERTICAL" x="-5.08" y="-9.525">
+<attribute name="PROD_ID" value="CONN-08249" x="-5.08" y="-9.525" size="1.778" layer="27" display="off"/>
+<attribute name="SF_ID" value="GPS-00579" x="-5.08" y="-9.525" size="1.778" layer="27" display="off"/>
+</element>
 </elements>
 <signals>
 <signal name="GND">

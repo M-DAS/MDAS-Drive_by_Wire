@@ -9821,6 +9821,8 @@ v1.0</text>
 <rectangle x1="3.14325" y1="53.11775" x2="50.76825" y2="53.18125" layer="201" rot="R180"/>
 <rectangle x1="3.14325" y1="53.18125" x2="50.76825" y2="53.24475" layer="201" rot="R180"/>
 <rectangle x1="3.14325" y1="53.24475" x2="50.76825" y2="53.30825" layer="201" rot="R180"/>
+<text x="37.9095" y="4.7625" size="0.6096" layer="26" rot="MR0">A4 A3 A2 A1 S2 S1</text>
+<text x="22.9235" y="4.6355" size="0.6096" layer="26" rot="MR0">G2 T2 Gnd 5v T2 G1</text>
 </plain>
 <libraries>
 <library name="EAGLE_BoosterPack_Library">

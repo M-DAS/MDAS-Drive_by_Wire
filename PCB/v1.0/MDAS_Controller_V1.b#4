@@ -3019,6 +3019,52 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </package>
 </packages>
 </library>
+<library name="diode" urn="urn:adsk.eagle:library:210">
+<description>&lt;b&gt;Diodes&lt;/b&gt;&lt;p&gt;
+Based on the following sources:
+&lt;ul&gt;
+&lt;li&gt;Motorola : www.onsemi.com
+&lt;li&gt;Fairchild : www.fairchildsemi.com
+&lt;li&gt;Philips : www.semiconductors.com
+&lt;li&gt;Vishay : www.vishay.de
+&lt;/ul&gt;
+&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+<package name="DO41-10" urn="urn:adsk.eagle:footprint:43094/1" library_version="2">
+<description>&lt;B&gt;DIODE&lt;/B&gt;&lt;p&gt;
+diameter 2.54 mm, horizontal, grid 10.16 mm</description>
+<wire x1="2.032" y1="-1.27" x2="-2.032" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="2.032" y1="-1.27" x2="2.032" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="-2.032" y1="1.27" x2="2.032" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="-2.032" y1="1.27" x2="-2.032" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="5.08" y1="0" x2="4.064" y2="0" width="0.762" layer="51"/>
+<wire x1="-5.08" y1="0" x2="-4.064" y2="0" width="0.762" layer="51"/>
+<wire x1="-0.635" y1="0" x2="0" y2="0" width="0.1524" layer="21"/>
+<wire x1="1.016" y1="0.635" x2="1.016" y2="-0.635" width="0.1524" layer="21"/>
+<wire x1="1.016" y1="-0.635" x2="0" y2="0" width="0.1524" layer="21"/>
+<wire x1="0" y1="0" x2="1.524" y2="0" width="0.1524" layer="21"/>
+<wire x1="0" y1="0" x2="1.016" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="0" y1="0.635" x2="0" y2="0" width="0.1524" layer="21"/>
+<wire x1="0" y1="0" x2="0" y2="-0.635" width="0.1524" layer="21"/>
+<pad name="A" x="5.08" y="0" drill="1.1176"/>
+<pad name="C" x="-5.08" y="0" drill="1.1176"/>
+<text x="-2.032" y="1.651" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="-2.032" y="-2.794" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
+<rectangle x1="-1.651" y1="-1.27" x2="-1.143" y2="1.27" layer="21"/>
+<rectangle x1="2.032" y1="-0.381" x2="3.937" y2="0.381" layer="21"/>
+<rectangle x1="-3.937" y1="-0.381" x2="-2.032" y2="0.381" layer="21"/>
+</package>
+</packages>
+<packages3d>
+<package3d name="DO41-10" urn="urn:adsk.eagle:package:43336/1" type="box" library_version="2">
+<description>DIODE
+diameter 2.54 mm, horizontal, grid 10.16 mm</description>
+<packageinstances>
+<packageinstance name="DO41-10"/>
+</packageinstances>
+</package3d>
+</packages3d>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -3258,6 +3304,7 @@ Please make sure your boards conform to these design rules.</description>
 <element name="R13" library="adafruit" package="R0603" value="21k" x="41.275" y="3.175"/>
 <element name="THROTTLE" library="SparkFun-Connectors" package="1X06-1MM" value="" x="19.05" y="3.81"/>
 <element name="INPUTS" library="SparkFun-Connectors" package="1X06-1MM" value="" x="34.29" y="3.81"/>
+<element name="D1" library="diode" library_urn="urn:adsk.eagle:library:210" package="DO41-10" package3d_urn="urn:adsk.eagle:package:43336/1" value="1N4004" x="22.86" y="34.925" rot="R180"/>
 </elements>
 <signals>
 <signal name="GND">
@@ -3350,6 +3397,7 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="10.16" y1="24.55" x2="10.375" y2="24.765" width="0.254" layer="1"/>
 <wire x1="10.375" y1="24.765" x2="12.065" y2="24.765" width="0.254" layer="1"/>
 <via x="12.065" y="24.765" extent="1-16" drill="0.35"/>
+<contactref element="D1" pad="A"/>
 </signal>
 <signal name="CANL">
 <contactref element="CAN_TRANSCIEVER" pad="6"/>
@@ -3390,6 +3438,7 @@ Please make sure your boards conform to these design rules.</description>
 <contactref element="C1" pad="1"/>
 <wire x1="21.59" y1="24.995" x2="24.535" y2="24.995" width="0.508" layer="1"/>
 <wire x1="24.535" y1="24.995" x2="26.035" y2="23.495" width="0.508" layer="1"/>
+<contactref element="D1" pad="C"/>
 </signal>
 <signal name="5V">
 <contactref element="A1" pad="21"/>

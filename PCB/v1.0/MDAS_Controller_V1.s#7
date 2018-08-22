@@ -715,17 +715,9 @@ Datasheet referenced for footprint
 Example device(s):
 DB9
 </description>
-</package3d>
-<package3d name="DB9_MALE" urn="urn:adsk.eagle:package:38021/1" type="box" library_version="1">
-<description>9 Pin Serial Connector - Male PCB Mount Right Angle
-0.318" style. 
-Specifications:
-Pin count:11
-
-Datasheet referenced for footprint
-Example device(s):
-DB9
-</description>
+<packageinstances>
+<packageinstance name="DB9"/>
+</packageinstances>
 </package3d>
 <package3d name="JST-6-SMD-VERT-1.0MM" urn="urn:adsk.eagle:package:38270/1" type="box" library_version="1">
 <description>JST SH Vertical 6-Pin SMT
@@ -739,6 +731,20 @@ JST_6PIN_VERTICAL
 </description>
 <packageinstances>
 <packageinstance name="JST-6-SMD-VERT-1.0MM"/>
+</packageinstances>
+</package3d>
+<package3d name="DB9_MALE" urn="urn:adsk.eagle:package:38021/1" type="box" library_version="1">
+<description>9 Pin Serial Connector - Male PCB Mount Right Angle
+0.318" style. 
+Specifications:
+Pin count:11
+
+Datasheet referenced for footprint
+Example device(s):
+DB9
+</description>
+<packageinstances>
+<packageinstance name="DB9_MALE"/>
 </packageinstances>
 </package3d>
 </packages3d>
@@ -11011,6 +11017,8 @@ Metric Code Size 5664</description>
 <pinref part="R6" gate="G$1" pin="1"/>
 <wire x1="101.6" y1="111.76" x2="101.6" y2="106.68" width="0.1524" layer="91"/>
 <junction x="101.6" y="106.68"/>
+<label x="91.44" y="106.68" size="1.778" layer="95"/>
+<label x="129.54" y="73.66" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="THROTTLE" gate="G$1" pin="4"/>
@@ -11436,6 +11444,11 @@ Metric Code Size 5664</description>
 <wire x1="101.6" y1="142.24" x2="101.6" y2="147.32" width="0.1524" layer="91"/>
 <label x="101.6" y="147.32" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="INPUTS" gate="G$1" pin="5"/>
+<wire x1="93.98" y1="43.18" x2="86.36" y2="43.18" width="0.1524" layer="91"/>
+<label x="86.36" y="43.18" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="AI1H" class="0">
 <segment>
@@ -11459,13 +11472,6 @@ Metric Code Size 5664</description>
 <pinref part="R10" gate="G$1" pin="2"/>
 <wire x1="86.36" y1="142.24" x2="86.36" y2="147.32" width="0.1524" layer="91"/>
 <label x="86.36" y="147.32" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="AH3H" class="0">
-<segment>
-<pinref part="INPUTS" gate="G$1" pin="5"/>
-<wire x1="93.98" y1="43.18" x2="86.36" y2="43.18" width="0.1524" layer="91"/>
-<label x="86.36" y="43.18" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
